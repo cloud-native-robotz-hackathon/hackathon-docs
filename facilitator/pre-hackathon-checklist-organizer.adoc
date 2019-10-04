@@ -1,0 +1,121 @@
+= Robot Hackathon Preparation 
+:toc: macro
+
+
+= for Organizers
+:toc: macro
+
+
+== Introduction
+
+During preparation and execution of a robot hackathon two roles are needed: 
+
+Organizers and Facilitators. Organizers task is to take care of logistices, location, pre-requirements. Facilitators have in-depth knowledge of the setup and will run the actual hackathon. 
+
+The Robot Hackathon attendees are organized in teams. Each team will get a robot and team size can be 2-3 members. The maximum number of teams depends on a number of factors but experience shows two facilitators should be able to handle up to 10 teams.
+
+
+
+Having the pre-requisites outlined in this document in preparation for the Hackathon is important for the success. Please check back with the facilitators ahead of time to clarify open topics.
+
+
+
+=== Infrastructure
+
+Most of the components needed for the Hackathon run on a cloud-based OpenShift cluster *provided by the facilitators* . Only a stable Internet connection between the robots and the cloud-based Openshift Container Platform is needed. 
+
+Connectivity from the robots to the OpenShift cluster is established through a WIFI router *provided by the facilitators* . 
+
+This router can either be bridged to the local WIFI or, if not possible, to a mobile hotspot. If possible the local Wifi that the router connects to, should be separate of the attendee WIFI. Having a stable and reliable WIFI/Internet connection is a crucial part of the preparations! It should be checked well in advance.
+
+== Attendees and Teams 
+
+
+
+* *Attendees*
+  ** One laptop for each attendee (or at least per team, see below)
+  ** Usually this means BYOL
+  ** Laptop requirements: Browser (Chrome/Firefox, Internet-connection) 
+  ** Should have some programming experience
+* *Teaming*
+  ** At least one laptop per team
+  ** If possible each team should have at least one experienced developer.
+  ** Teams get pre-assigned names
+  ** Team division should be done pre-event to distribute differently skilled attendees
+* *Registration*
+  ** Have attendees register pre-event
+  ** Query for level of experience/programming languages
+  ** Walk-Ins should be avoided and then only to join existing teams 
+  ** If you are planning to take pictures or videos make sure you have the attendees sign GDPR release forms
+
+== Location, Room and Space
+
+
+
+The following two locations can be in two separate or a single room depending on availability.
+
+
+
+*Meeting Location for all attendees*
+
+* Equipment
+  ** Standard equipment (Seating, projector, flipchart)
+* Activities
+  ** Registration
+  ** Dividing attendees into teams according to planning
+  ** Handing out team badges
+  ** Initial presentation and briefing
+
+*Robot Hackathon Location*
+
+* Equipment
+  ** Table/seating per team with team name
+  ** Enough power outlets per table (laptops/robot)
+  ** Space for test runs of the robot
+  ** A test labyrinth from the cardboard boxes provided for each team or shared between teams 
+  ** Space for a separate final test labyrinth
+  ** A labyrinth usually needs an area of 2 x 2 meters 
+* Activities
+  ** Having fun… the actual hackathon
+  ** Robot hacking & Testing
+  ** Final presentation/testing of solutions
+
+== Agenda/Time Planning
+
+
+
+Meeting Location (1 Hour)
+
+* Registration/Team division
+* Welcome/Introduction
+* Presentation
+
+
+
+Hackathon Area
+
+* Teams go through guided steps (self-paced, ~1 hour)
+* Hacking (~3 hours, fixed duration)
+* Teams present solution in final labyrinth
+
+== Description for Invitation
+
+
+
+Container-based development is all the rage and you really want to know
+
+what OpenShift as a container platform can do for you? And having some
+
+fun along the way isn't bad, either?
+
+
+
+Then join us for this hackathon. You'll learn a lot about cloud-native Development on OpenShift  while writing code to steer a robot through a maze. The robot is controlled through API calls, exposed through our API management platform 3Scale. The coding won't be too complex, you can send directional commands or query a distance sensor. You'll leverage a browser based IDE and the runtime of your choice.
+
+
+
+It's all about getting the little guy through a labyrinth safely and to get an idea of how easy coding can be when everything else is taken care of by the platform.
+
+
+
+For this lab you should have at least some basic coding experience. An introduction and code templates (Java/Python/PHP/NodeJS) to get you started will be provided.

@@ -1,0 +1,43 @@
+= What is it about?
+== Cloud Native Robotz - The Showcase
+In this showcase you’ll learn how to program, manage & steer a robot with a centrally managed application running in a container environment in a public cloud. The showcase will present cloud native application development, life cycle management and monitoring. 
+
+This one day hands-on cloud-native robotz workshop provides developers an introduction to cloud-native applications and gives you an experience of building cloud-native applications using e.g. OpenShift, Codeready Workspaces, GIT, S2I, 3Scale, AMQ, Java, Python, NodeJS and PHP.
+
+== What is Cloud Native Application Design?
+To succeed in fast-paced, software-driven markets, companies must change the way they design, build and use applications. 
+
+* Cloud-native application development is an approach to building, running, and improving apps based on well-known techniques and technologies for cloud computing. In short these are:
+* applications broken down into microservices
+* running in containers for portability 
+* connected with APIs
+* highly automated deployment
+* in cloud architectures (private, managed, public or in hybrid scenarios)
+
+== How is this different to a more traditional approach?
+
+What Solutions have been leveraged for this Showcase?
+In this specific use case we used the following solutions from Red Hat®. 
+
+* As a container platform we have decided for Red Hat OpenShift. 
+ * For the API management we decided for Red Hat 3scale API Management because it is well integrated into OpenShift and is supporting our need for a self-managed cloud environment that provides traffic control, security, and access policy enforcement. As it helps as well for monetization workflows this can be used to demo how to build a business case around this showcase. We leverage the managed service option at www.3scale.net. 
+
+
+== The Robot Hackathon (day)
+
+=== Description
+This use case is leveraged for 1-day hackathons / workshops to get deeper into the idea of cloud native application development and to get more insight about the underlying concepts.
+Scenario
+Welcome! You are working at Robot Services, Ltd. You are our super geek in our team and we need you! A chemical plant had a disastrous accident. We have sent in some robots to rescue survivors and help to get the situation back to good. 
+
+Our robot is on a special mission through the internal offices of the plant. But now it is stuck in a dangerous environment: The whole thing looks more like a labyrinth. Time is ticking! We need you and your skills to get the robot out. Your mission includes several assignments using our state-of-the-art robot which is controlled centrally in our Robot Services Cloud Data Center. 
+
+Because speed is of utmost importance you will utilize agile and DevOps based development methodologies. To get productive quickly you will use Robot Services’ container platform OpenShift to deploy and run your applications. Don’t worry about the robot’s specific control technology - everything is managed through standardized APIs.
+
+What are you waiting for? Get your systems up and running!
+
+=== Setup
+
+Go to link:facilitator/pre-hackathon-setup.adoc[facilitator setup] 
+
+

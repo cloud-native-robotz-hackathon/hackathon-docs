@@ -1,0 +1,228 @@
+== General Requirements
+
+* One laptop for each team
+  ** Usually this means BYOL
+  ** Laptop requirements: Browser (Chrome/Firefox, Internet-connection) 
+* Attendees 
+  ** have at least some programming experience
+* Teams should be formed sensibly (experienced devs mixed with less experienced attendees)
+* Attendees should register somehow up front and note their dev experience level
+  ** No walk-ins!
+
+== Location, Room and Space
+
+
+
+Meetingroom for all attendees
+
+* Standard equipment
+* Initial presentation and briefing 
+* Dividing attendees into teams 
+
+
+
+Robot Hackathon Area
+
+* One table per team
+* Enough power outlets per table (laptops/robot)
+* Room for testing
+* Test labyrinth for each team or shared between teams
+* One separate production labyrinth
+
+
+
+== Materials
+
+* Badges with team name
+* Labyrinth walls
+
+
+
+== Time Planning
+
+
+
+Meetingroom (1 Hour)
+
+* Registration/Team division
+* Welcome/Introduction
+* Presentation
+
+
+
+Hackathon Area
+
+* Guided Steps (self-paced, ~1 hour)
+* Hacking (~3-4 hours, fixed duration)
+* Teams present solution in production labyrinth
+
+
+
+== Robot Infrastructure
+
+* The robots need their own WIFI network
+* Plan is
+  ** 
+
+== Description for Invitation etc
+
+
+
+Container-based development is all the rage and you really want to know
+
+what OpenShift as a container platform can do for you? And having some
+
+fun along the way isn't bad, either?
+
+
+
+Then join us for this hackathon. You'll learn a lot about cloud-native Development on OpenShift  while writing code to steer a robot through a maze. The robot is controlled through API calls, exposed through our API management platform 3Scale. The coding won't be too complex, you can send directional commands or query a distance sensor. You'll leverage a browser based IDE and the runtime of your choice.
+
+
+
+It's all about getting the little guy through a labyrinth safely and to get an idea of how easy coding can be when everything else is taken care of by the platform.
+
+
+
+For this lab you should have at least some basic coding experience and Java, Python, PHP or NodeJS shouldn't be completely foreign to you. An introduction and code templates (Java/Python/PHP/NodeJS) to get you started will be provided.
+
+
+
+== Pre-Workshop Setup
+
+Execute these steps ahead of time to be prepared for the Hackathon.
+
+=== Robot Setup
+
+* Raspian for Robots
+* Directory Structure
+* Python Robot API
+* How to mount and modify SD-Card
+* How to connect display and keyboard
+* Credentials
+
+
+
+=== OCP Infrastructure Setup
+
+The current Setup utilizes two OpenShift Clusters as well as a 3Scale Online Account. Every Robot/Team as a unique Key assigned that will be used as Username and Token throughout the Hackathon.  The password is always the same and should be announced at the beginning of the Hackathon.
+
+
+
+==== 3Scale Setup
+
+Make sure the Integration URL points to the URL of your Hubcontroller   
+
+==== Core OCP Setup
+
+As Core OCP we have provisioned a 3.11 Cluster on AWS that runs the Hubcontroller which routes the REST requests from 3Scale to the individual robot IPs . To install the Hubcontroller you need to
+
+* Make sure you have an OpenJDK 1.8, Maven and oc on your Path
+* Clone : https://github.com/nexus-Six/robot-hackathon-hub-controller.git[https://github.com/nexus-Six/robot-hackathon-hub-controller.git]
+* Connect to your cluster via oc
+* Switch or create a new project 
+* In the robot-hackathon-hub-controller directory run : mvn clean fabric8:deploy -Popenshift
+* Wait and verify that the application has started in the console
+* The mapping between Robot key and IP is done via a JSON-Array in the ConfigMap robot-mapping-configmap (You need to redeploy the application after any change)
+
+ 
+
+==== Workshop OCP Setup
+
+As Workshop OCP cluster we have provisioned RHPDS OCP Workshop and used the Cloud Native Workshop deployer to provision Codeready Workspaces and Gogs.
+
+After provisioning you need to setup the matching Useraccounts to your Robot Keys in
+
+* OCP
+* Coderready Workspaces
+* Gogs
+
+
+
+== On-Site Setup
+
+Setup using Netgear router with DD-WRT for on-site network.
+
+* Router Setup
+  ** Assemble
+  ** Switch-on router
+  ** Connect ethernet cable from router (Port 1) to laptop. Make sure laptop is set to DHCP. You should get an IP like "192.168.151.x"
+  ** Access “192.168.151.1” in a browser
+    *** As soon as you click on an item you will need to login as *admin* / *r3dh4t1!*
+  ** The route has two physical WIFI interfaces 2.4 and 5 GHz. Each interface can have one or more virtual WIFI interfaces. You need to adapt the setup to the WIFI you are going to use as “upstream” (ie conference/room WIFI). The robots are connecting automatically to a WIFI *robotzhackathon42*
+  ** Example 1 (5GHz Upstream Wifi): 
+    *** The room WIFI (“upstream”) runs on 5 GHz. Configure the 5 GHz interface as repeater mode. 
+      **** Go to *Status* > *Wireless > Interface wl0 > Site Survey*
+      **** Select the Upstream Wifi and click *Join*
+    *** Set the credentials in *Wireless->Wireless Security* and choose the right interface. In our case *wl1* (5 GHz)
+      **** *Keep WPA2-PSK* and *AES*
+      **** Click *Apply Settings*
+    *** Go back to *Wireless Settings* and configure the *wl0* (2.4 GHz) in *AP* mode using the SSID *robotzhackathon42*
+      **** Click *Apply Settings*
+    *** Set the credentials for this interface in the *Wireless Security* to *keines32.*
+      **** Click *Apply Settings*
+  ** Example 2 (2.4GHz Upstream Wifi):
+    *** If the room WIFI is only 2.4 GHz (and the robots need 2.4, too) you have to use a virtual interface.
+    *** Use the same process like above, but configure only the 2.4 GHz interface:
+      **** Configure the physical interface a repeater
+      **** Add a virtual interface and configure with SSID *robotzhackathon42*
+      **** *Apply Settings*
+      **** Add credentials (keines32.) in *Wireless Security*
+  ** *General Hint :* You may need to wait a few seconds for settings to apply and wifis to connect!
+
+
+
+     
+
+
+
+== Hackathon Execution
+
+* Provide a robot with adapter and batteries, as well as some cardboard boxes for each team
+* Gather the attendees and give the OCP/Hackathon Intro
+* Explain the timetable and feature Freeze
+* Divide the Teams so there is one person with dev experience in each team
+* Show the link to the Hackathon Lab Guide
+* Support the attendees during their hacking
+* At feature freeze, gather all the card board boxes and prepare the final labyrinth in a free space
+* Let each team run their robot through the maze    
+
+== Appendix
+
+Wireless Network Mode
+
+
+
+Available Settings (2.4 GHz): Disabled, Mixed, B-Only, G-Only, BG-Mixed, NG-Mixed, N-Only (2.4 GHz)
+
+
+
+Available Settings (5 GHz): Disabled, Mixed, A-Only, NA-Mixed, AC/N-Mixed, N-Only (5 GHz), AC-Only
+
+
+
+Available Settings (60 GHz): Disabled, Mixed, AD-Only
+
+
+
+Default Setting: Mixed
+
+
+
+*Recommended Setting* : Mixed or NG-Mixed (2.4 GHz), Mixed or AC/N-Mixed (5 GHz), AD-Only (60 GHz)
+
+
+
+Controls which 802.11 signals are being broadcast by the radio. Depending on the selected network mode your wireless channel list and maximum TX power can vary. NG-Mixed for 2.4 GHz & Mixed or AC/N-Mixed is the recommended setting for most people as your clients' NICs are able to use either (V)HT20, (V)HT40, & VHT80 "properly" with this setting. If you have any issues or do not use 802.11b clients, switch to NG-Mixed. N-Only is broken on many units for some time (both bands) & still is, try to avoid using as there is minimal performance change from NG-Mixed -> N-Only if all you use is 802.11n clients for either of them. For 802.11a/n 5 GHz radios, Mixed & NA-Mixed are the same.
+
+
+
+If you would like to disable wireless access, choose Disable.
+
+
+
+Note : when changing wireless mode, some advanced parameters are susceptible to be modified ("Afterburner", "Basic Rate" or "Frame Burst").
+
+
+
+From: https://wiki.dd-wrt.com/wiki/index.php/Basic_Wireless_Settings#Wireless_Mode
