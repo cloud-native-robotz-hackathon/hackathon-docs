@@ -73,7 +73,7 @@ cd /projects/<GUID>-app
 Now build and run the application locally by executing this Maven command:
 
 ----
-mvn spring-boot:run
+mvn compile quarkus:dev
 ----
 
 WARNING: You should do this in a new terminal window because you can't stop the 
