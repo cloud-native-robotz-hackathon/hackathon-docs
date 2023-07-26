@@ -1,4 +1,7 @@
 = What is it about?
+
+## ARCHIVED VERSION : Check the aktive repos for the current version 
+
 == Cloud Native Robotz - The Showcase
 In this showcase you’ll learn how to program, manage & steer a robot with a centrally managed application running in a container environment in a public cloud. The showcase will present cloud native application development, life cycle management and monitoring. 
 
